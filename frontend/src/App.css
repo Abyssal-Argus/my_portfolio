@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+html{
+  scroll-snap-type: mandatory;
+  scroll-behavior: smooth;
+  background-color: black;
+}
+
+
+body{
+  cursor: default;
+}
+
+#cursor {
+  transform-origin: center;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-style: normal;
+}
+
+section{
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+.libre-bodoni{
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+#butt {
+  position: relative;
+  overflow: hidden;
+}
+
+#butt::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e11d48; /* Same color as the border */
+  transition: width 0.3s ease;
+}
+
+a,button{
+  z-index: 10;
+}
+
+#butt:hover::after {
+  width: 100%;
+}
+
+.card {
+  @apply w-80 cursor-pointer border-b-4 border-rose-600 rounded-md bg-gradient-to-t from-white/20 h-96 text-center py-7 self-end duration-500 delay-100 hover:h-[26rem];
+}
+
+.card-active{
+  @apply delay-100 duration-300;
+}
